@@ -1,15 +1,17 @@
-<h1>Books</h1>
-<% @books.each do |book| %>
-  <p>タイトル</p>
-  <p><%= book.title %></p>
-  <%= link_to "Show", book_path(book.id) %>
-  <%= link_to "Edit", edit_book_path(book.id) %>
-  <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
-
-<% end %>
+<div class="book-wrap">
+  <% @books.each do |book| %>
+    <div class="book-box">
+      <span class="book-title"><%= book.title %></span>
+      <span class="book-body"><%= book.body %></span>
+      <%= link_to "Show", book_path(book.id) %>
+      <%= link_to "Edit", edit_book_path(book.id) %>
+      <%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm"=> "Are you sure?" %>
+    </div>
+  <% end %>
+</div>
 
 <h2>New Book</h2>
-<!--ここから-->
+
 <% if @book.errors.any? %>
   <%= @book.errors.count %>件のエラー
   <ul>
@@ -18,7 +20,6 @@
     <% end %>
   </ul>
 <% end %>
-<!--ここまで表示されない-->
 
 <%= form_with model: @book do |f| %>
   <h4>タイトル</h4>

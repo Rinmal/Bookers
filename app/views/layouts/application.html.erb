@@ -11,6 +11,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <p id="notice"></p>
+    <h1>Bookers</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <%= yield %>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>New Book</h2>
+
   </body>
 </html>
