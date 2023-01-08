@@ -11,7 +11,7 @@
 <h2>New Book</h2>
 <!--ここから-->
 <% if @book.errors.any? %>
-  <% @book.errors.count %>件のエラー
+  <%= @book.errors.count %>件のエラー
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
